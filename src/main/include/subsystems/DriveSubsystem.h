@@ -17,8 +17,6 @@
 #include <pathplanner/lib/controllers/PPHolonomicDriveController.h>
 #include <pathplanner/lib/trajectory/PathPlannerTrajectory.h>
 
-namespace frc2025 {
-
 class DriveSubsystem : public frc2::SubsystemBase {
 public:
     DriveSubsystem(RobotState& robotState);
@@ -57,5 +55,3 @@ private:
     // PathPlanner Controller
     // std::unique_ptr<pathplanner::PPHolonomicDriveController> m_pathFollowingController;
 };
-
-} // namespace frc2025

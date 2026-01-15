@@ -4,8 +4,6 @@
 #include <frc/geometry/Pose2d.h>
 #include <vector>
 
-namespace frc2025 {
-
 struct VisionFieldPoseEstimate {
     units::second_t timestamp;
     frc::Pose2d visionRobotPose;
@@ -14,5 +12,3 @@ struct VisionFieldPoseEstimate {
     units::second_t getTimestamp() const { return timestamp; }
     frc::Pose2d getVisionRobotPose() const { return visionRobotPose; }
 };
-
-} // namespace frc2025

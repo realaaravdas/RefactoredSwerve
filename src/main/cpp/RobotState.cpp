@@ -1,8 +1,6 @@
 #include "RobotState.h"
 #include <frc/DriverStation.h>
 
-namespace frc2025 {
-
 using namespace units::literals;
 
 RobotState::RobotState() : m_fieldToRobot{0_m, 0_m, 0_deg} {}
@@ -76,5 +74,3 @@ void RobotState::setTrajectoryCurrentPose(const frc::Pose2d& pose) {
 std::optional<frc::Pose2d> RobotState::getTrajectoryCurrentPose() const {
     return m_trajectoryCurrentPose;
 }
-
-} // namespace frc2025

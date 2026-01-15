@@ -19,8 +19,6 @@
 
 #include "ctre/phoenix6/configs/Configs.hpp"
 
-namespace frc2025 {
-
 namespace Constants {
     using namespace units::literals;
 
@@ -97,4 +95,3 @@ namespace Constants {
     }
 
 } // namespace Constants
-} // namespace frc2025

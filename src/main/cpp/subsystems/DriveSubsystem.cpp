@@ -10,8 +10,6 @@
 #include <pathplanner/lib/controllers/PPHolonomicDriveController.h>
 #include <frc/DriverStation.h>
 
-namespace frc2025 {
-
 DriveSubsystem::DriveSubsystem(RobotState& robotState)
     : m_robotState(robotState),
       m_drivetrain(TunerConstants::CreateDrivetrain())
@@ -66,5 +64,3 @@ frc2::CommandPtr DriveSubsystem::ApplyRequest(std::function<ctre::phoenix6::swer
         SetControl(*requestSupplier());
     });
 }
-
-} // namespace frc2025

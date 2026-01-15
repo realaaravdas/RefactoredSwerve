@@ -2,7 +2,6 @@
 
 #include <ctre/phoenix6/swerve/SwerveDrivetrain.hpp>
 
-namespace frc2025 {
 namespace TunerConstants {
 
     // PLACEHOLDER: This file mimics the structure of a Tuner X generated file.
@@ -44,5 +43,4 @@ namespace TunerConstants {
             ModuleConstants{});
     }
 
-}
 }

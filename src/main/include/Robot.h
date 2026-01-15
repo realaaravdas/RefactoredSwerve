@@ -9,11 +9,10 @@
 #include "Constants.h"
 #include "RobotState.h"
 #include "subsystems/DriveSubsystem.h"
+#include "subsystems/vision/QuestNav.h"
 
 // Tuner X includes (for requests)
 #include <ctre/phoenix6/swerve/SwerveDrivetrain.hpp>
-
-namespace frc2025 {
 
 class Robot : public frc::TimedRobot {
 public:
@@ -33,6 +32,8 @@ private:
     RobotState m_robotState;
     DriveSubsystem m_drive{m_robotState};
 
+    QuestNav questnav;
+
     // Controllers
     // PS5 Controller is usually detected as a GenericHID or XboxController in WPILib depending on driver
     // CommandXboxController works well for generic mapping usually, or use CommandPS5Controller
@@ -48,5 +49,3 @@ private:
 
     void ConfigureBindings();
 };
-
-} // namespace frc2025

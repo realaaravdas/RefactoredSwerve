@@ -12,7 +12,7 @@
 #include <optional>
 #include <functional>
 
-#include "subsystems/VisionFieldPoseEstimate.h"
+#include "subsystems/vision/VisionFieldPoseEstimate.h"
 
 using namespace units::literals;
 

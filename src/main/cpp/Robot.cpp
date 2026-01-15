@@ -18,12 +18,13 @@ void Robot::RobotInit() {
     // and instruct user to tune via Tuner X or check header.
     //
     // m_driveFacingAngle.HeadingController.P = Constants::DriveConstants::kHeadingControllerP;
-
+    questnav.init();
     ConfigureBindings();
 }
 
 void Robot::RobotPeriodic() {
     frc2::CommandScheduler::GetInstance().Run();
+    questnav.periodic();
     // Update mechanism states if any (none in this strip-down)
 }
 
@@ -55,7 +56,7 @@ void Robot::SimulationPeriodic() {}
 void Robot::ConfigureBindings() {
     // 1. Driving Control (Field Centric)
     m_drive.SetDefaultCommand(
-        m_drive.Run([this] {
+        m_drive.Run([this]() {
             // Apply deadband and scale
             double vx = -frc::ApplyDeadband(m_driverController.GetLeftY(), Constants::kSteerJoystickDeadband);
             double vy = -frc::ApplyDeadband(m_driverController.GetLeftX(), Constants::kSteerJoystickDeadband);
@@ -93,7 +94,7 @@ void Robot::ConfigureBindings() {
     // 3. Rotate to Heading (Snap to angle)
     // Example: Hold "A" / "Cross" to snap to 0 degrees (forward)
     m_driverController.Cross().WhileTrue(
-        m_drive.Run([this] {
+        m_drive.Run([this]() {
             double vx = -frc::ApplyDeadband(m_driverController.GetLeftY(), Constants::kSteerJoystickDeadband);
             double vy = -frc::ApplyDeadband(m_driverController.GetLeftX(), Constants::kSteerJoystickDeadband);
 
@@ -111,6 +112,6 @@ void Robot::ConfigureBindings() {
 
 #ifndef RUNNING_FRC_TESTS
 int main() {
-    return frc::StartRobot<frc2025::Robot>();
+    return frc::StartRobot<Robot>();
 }
 #endif
